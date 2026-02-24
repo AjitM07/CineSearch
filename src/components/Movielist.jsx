@@ -15,7 +15,7 @@ function MovieList () {
     setError(null)
 
     fetch(
-      `https://api.themoviedb.org/3/movie/popular?api_key=ec22f00c2a0b5ea354e16c27d82f3409&page=${page}`
+      `https://api.themoviedb.org/3/movie/popular?api_key=${import.meta.env.VITE_TMDB_API_KEY}&page=${page}`
     )
       .then(response => {
         if (!response.ok) {
