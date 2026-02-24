@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Loader from './Loader';
 
+const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
 function MovieList () {
   const [movies, setMovies] = useState([])
@@ -15,7 +16,7 @@ function MovieList () {
     setError(null)
 
     fetch(
-      `https://api.themoviedb.org/3/movie/popular?api_key=${import.meta.env.VITE_TMDB_API_KEY}&page=${page}`
+      `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&page=${page}`
     )
       .then(response => {
         if (!response.ok) {
